@@ -1,6 +1,5 @@
-import { Kind, Type } from '..'
+import { Kind, Type, Object } from '..'
 import { KeyOrPath } from '.'
-import { _$update } from './update'
 
 /**
  * `_updateN` is a type-level function that Update multiple nested values in object O
@@ -22,7 +21,7 @@ export type _$updateN<
       Tail,
       VTail,
       Type._$cast<
-        _$update<
+        Object._$update<
           Type._$cast<
             Head extends PropertyKey[] ? Head : [Head],
             PropertyKey[]

@@ -1,5 +1,4 @@
-import { Kind, Type } from '..'
-import { _$atPath } from './at-path'
+import { Kind, Type, Object } from '..'
 
 /**
  * `_atPathN` is a type-level function that get the nested values in object O at the paths and keys specified in P.
@@ -23,7 +22,7 @@ export type _$atPathN<
         [
           ...Acc,
           Head extends PropertyKey[]
-            ? _$atPath<Head, O>
+            ? Object._$atPath<Head, O>
             : O[Type._$cast<Head, keyof O>]
         ]
       >
