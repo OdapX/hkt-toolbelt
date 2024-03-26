@@ -1,5 +1,5 @@
 import { Kind, Type } from '..'
-import { KeyOrPath } from './at-path-n'
+import { KeyOrPath } from '.'
 import { _$update } from './update'
 
 /**

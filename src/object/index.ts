@@ -12,3 +12,5 @@ export * from './paths'
 export * from './values'
 export * from './update'
 export * from './update-n'
+
+type KeyOrPath = PropertyKey | PropertyKey[]
