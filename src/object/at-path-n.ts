@@ -3,7 +3,7 @@ import { Kind, Type, Object } from '..'
 /**
  * `_atPathN` is a type-level function that get the nested values in object O at the paths and keys specified in P.
  *
- * @template P - The path to the property or properties.
+ * @template P - The paths or keys to the properties to retrieve.
  * @template O - The type of the object to retrieve values from.
  * @template Acc - Accumulator type to store intermediate results.
  * @template Output - The resulting type after retrieving values.
@@ -29,10 +29,10 @@ export type _$atPathN<
     : Acc[number]
 > = Output
 
-interface AtPathN_T<Path extends KeyOrPath[]> extends Kind.Kind {
+interface AtPathN_T<Paths extends KeyOrPath[]> extends Kind.Kind {
   f(
     x: Type._$cast<this[Kind._], Record<PropertyKey, unknown>>
-  ): _$atPathN<Path, typeof x>
+  ): _$atPathN<Paths, typeof x>
 }
 
 /**
